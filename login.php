@@ -93,7 +93,7 @@ if (isset($_POST["login"])) {
       position: absolute;
       top: 50%;
       left: 5px;
-      color:#198754; /* Warna hijau untuk label */
+      color: #198754; /* Warna hijau untuk label */
       transform: translateY(-50%);
       font-size: 18px;
       transition: .5s;
@@ -150,7 +150,7 @@ if (isset($_POST["login"])) {
     }
 
     .signup_link a:hover {
-      text-decoration: none;
+      text-decoration: underline;
     }
 
     .alert {
@@ -162,18 +162,34 @@ if (isset($_POST["login"])) {
       color: #000;
       border-radius: 5px;
     }
+
     .txt_field {
       position: relative;
     }
+
     .txt_field input {
       padding-right: 40px; /* Menambahkan padding agar ikon mata tidak menutupi teks */
     }
+
     .toggle-password {
       position: absolute;
       right: 10px;
       top: 50%;
       transform: translateY(-50%);
       cursor: pointer;
+    }
+
+    .back-button {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+      color: #198754;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .back-button:hover {
+      color: #28a745;
     }
   </style>
 </head>
@@ -188,12 +204,13 @@ if (isset($_POST["login"])) {
         <label>Email</label>
       </div>
       <div class="txt_field">
-    <input type="password" id="password" name="password" required>
-    <span></span>
-    <label>Password</label>
-    <i class="toggle-password" onclick="togglePassword()">👁️</i> <!-- Ikon mata -->
-  </div>
+        <input type="password" id="password" name="password" required>
+        <span></span>
+        <label>Password</label>
+        <i class="toggle-password" onclick="togglePassword()">👁️</i> <!-- Ikon mata -->
+      </div>
       <button class="button btn-inti" name="login" id="login">Login</button>
+      <a href="javascript:history.back()" class="back-button">Kembali</a> <!-- Tombol Back -->
       <div class="signup_link">
         Belum punya akun? <a href="user/daftar.php">Daftar</a>.
       </div>
@@ -210,7 +227,7 @@ if (isset($_POST["login"])) {
         passwordField.type = "password";
         toggleIcon.textContent = "👁️"; // Ikon untuk membuka mata
       }
-    }b
+    }
   </script>
 </body>
 

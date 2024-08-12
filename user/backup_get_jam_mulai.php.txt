@@ -1,0 +1,28 @@
+<?php
+// Koneksi ke database
+$conn = mysqli_connect("localhost", "root", "", "dbfutsal");
+if (!$conn) {
+  die("Koneksi ke database gagal: " . mysqli_connect_error());
+}
+
+// Ambil nilai tgl_main dan jam_mulai dari parameter GET
+$tgl_main = $_GET['tgl_main'];
+$jam_mulai = $_GET['jam_mulai'];
+
+// Hitung waktu selesai berdasarkan waktu mulai yang dipilih oleh pengguna
+$jam_habis = date("Y-m-d H:i:s", strtotime($tgl_main . " " . $jam_mulai) + (60 * 60)); // Tambah 1 jam dari jam mulai
+
+// Query untuk memeriksa apakah ada booking pada rentang waktu yang dipilih oleh pengguna
+$sql = "SELECT * FROM sewa WHERE ('$tgl_main $jam_mulai' BETWEEN jam_mulai AND jam_habis) OR ('$tgl_main $jam_habis' BETWEEN jam_mulai AND jam_habis)";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+  // Jika ada booking pada rentang waktu yang dipilih oleh pengguna, kirimkan pesan Lapangan Tidak Tersedia
+  echo "Lapangan Tidak Tersedia";
+} else {
+  // Jika tidak ada booking pada rentang waktu yang dipilih oleh pengguna, kirimkan pesan Lapangan Tersedia
+  echo "Lapangan Tersedia";
+}
+
+mysqli_close($conn);
+?>

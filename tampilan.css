@@ -1,0 +1,340 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: #1b1b1b;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background: #198754;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  margin: 0 10px;
+  color: #ffffff;
+  transition: color 0.3s;
+  position: relative; /* Untuk garis bawah animasi */
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ff9800; /* Warna garis bawah saat aktif */
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  transition: width 0.3s ease;
+  color: #ff9800;
+}
+
+.navbar-nav .nav-link.active::after,
+.navbar-nav .nav-link:hover::after {
+  color: #ff9800;
+  width: 100%; /* Panjang garis bawah saat aktif atau saat hover */
+}
+
+.btn-inti {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-inti:hover {
+  background-color: #e68a00;
+  transform: scale(1.05);
+}
+
+.btn-non-inti {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-non-inti:hover {
+  background-color: #e68a00;
+  transform: scale(1.05);
+}
+
+.btn-hapus {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-hapus:hover {
+  background-color: #bb2d3b;
+  transform: scale(1.05);
+}
+
+.carousel-item img {
+  height: 400px;
+  width: 200px;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+}
+
+.lapangan .card {
+  background: #2d2d2d;
+  color: #ffffff;
+  border: 1px #6c757d solid;
+  transition: transform 0.3s ease;
+}
+.lapangan .card:hover {
+  transform: translateY(-10px);
+}
+.lapangan .card-img-top {
+  border-radius: 5px;
+}
+
+.modal-content {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  border-radius: 10px;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-title {
+  color: #ffffff;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.btn-primary {
+  background-color: #198754;
+  border-color: #198754;
+}
+
+.btn-primary:hover {
+  background-color: #146c43;
+  border-color: #146c43;
+}
+
+.pagination {
+  margin-top: 20px;
+}
+
+.page-link {
+  color: #ffffff;
+  background-color: #198754;
+  border: 1px solid #198754;
+}
+
+.page-link:hover {
+  color: #ffffff;
+  background-color: #146c43;
+  border-color: #146c43;
+}
+
+.page-item.active .page-link {
+  background-color: #146c43;
+  border-color: #146c43;
+}
+
+.page-item.disabled .page-link {
+  color: #6c757d;
+  pointer-events: none;
+  background-color: #2d2d2d;
+  border-color: #2d2d2d;
+}
+.footer {
+  background: #198754;
+  color: #fff;
+  padding: 2rem 0;
+}
+
+.footer h5 {
+  color: #ff9800;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.footer a {
+  color: #ff9800;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+.footer .social-icons a {
+  margin: 0 10px;
+  color: #ff9800;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  color: #fff;
+}
+
+#slider {
+  width: 1090px; /* Lebar */
+  border-radius: 10px; /* Radius Lingkaran Sudut */
+}
+
+/* Style untuk icon chat */
+#chat-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #198754;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  z-index: 1000;
+  border: 2px solid #fff; /* Tambahkan bingkai putih */
+}
+
+#chat-icon:hover {
+  background-color: #146c43;
+  transform: scale(1.1);
+}
+
+/* Style untuk chat box */
+.chat-box {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  width: 300px;
+  height: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto; /* Hanya mengizinkan isi chat untuk digulir */
+  padding: 10px;
+}
+
+.chat-form {
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-top: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+}
+
+.chat-form .form-group {
+  flex: 1;
+  margin: 0;
+}
+
+.chat-form .form-group textarea {
+  width: 100%;
+  border-radius: 5px;
+  padding: 5px;
+  resize: none; /* Mencegah textarea diubah ukurannya */
+}
+
+.chat-form button {
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+/* Style untuk pesan */
+.message {
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.message .text {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  padding-right: 30px;
+  overflow-wrap: break-word;
+  max-width: 70%;
+  position: relative;
+  clear: both;
+  color: #000;
+  min-width: 10%;
+}
+
+.message.outgoing .text {
+  background-color: #dcf8c6;
+  float: right;
+}
+
+.message.incoming .text {
+  background-color: #f5f5f5;
+  float: left;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: #999999;
+  margin-left: 5px;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+
+#chat-icon.has-new-messages::after {
+  content: "!";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+/* css untuk foto berita */
+  .card-img-top {
+    width: 100%;
+    height: 200px; /* Anda bisa mengatur tinggi sesuai kebutuhan */
+    object-fit: cover; /* Ini memastikan gambar dipotong dengan proporsional yang benar */
+  }
+
+
+/* end css untuk foto berita */

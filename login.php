@@ -209,8 +209,7 @@ if (isset($_POST["login"])) {
         <label>Password</label>
         <i class="toggle-password" onclick="togglePassword()">👁️</i> <!-- Ikon mata -->
       </div>
-      <button class="button btn-inti" name="login" id="login">Login</button>
-      <a href="javascript:history.back()" class="back-button">Kembali</a> <!-- Tombol Back -->
+     
       <div class="signup_link">
         Belum punya akun? <a href="user/daftar.php">Daftar</a>.
       </div>
